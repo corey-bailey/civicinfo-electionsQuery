@@ -5,7 +5,15 @@ const expect = chai.expect;
 
 chai.use(chaiHttp);
 chai.use(chaiMatch);
-
+var Banner = `
+ _____ _           _   _                ___  ______ _____   _____         _   
+|  ___| |         | | (_)              / _ \\ | ___ \\_   _| |_   _|       | |  
+| |__ | | ___  ___| |_ _  ___  _ __   / /_\\ \\| |_/ / | |     | | ___  ___| |_ 
+|  __|| |/ _ \\/ __| __| |/ _ \\| '_ \\  |  _  ||  __/  | |     | |/ _ \\/ __| __|
+| |___| |  __/ (__| |_| | (_) | | | | | | | || |    _| |_    | |  __/\\__ \\ |_ 
+\\____/|_|\\___|\\___|\\__|_|\\___/|_| |_| \\_| |_/\\_|    \\___/    \\_/\\___||___/\\__|                                                                    
+`
+console.log(Banner)
 describe('civic-info-api', function () {
 	describe('elections', function () {
 		describe('elections positive tests', () => {
