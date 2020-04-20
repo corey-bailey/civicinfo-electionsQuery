@@ -13,8 +13,8 @@ npm install
 ```
 ## Run Tests
 
-
 ```bash
+setenv APIKEY "PASS IN YOUR GOOGLE API KEY HERE"
 npx mocha
 ```
 

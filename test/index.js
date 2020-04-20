@@ -2,6 +2,7 @@ const chai = require('chai')
 const chaiHttp = require('chai-http');
 const chaiMatch = require('chai-match');
 const expect = chai.expect;
+var apiKey = process.env.APIKEY; 
 
 chai.use(chaiHttp);
 chai.use(chaiMatch);
@@ -20,7 +21,7 @@ describe('civic-info-api', function () {
 			it('validate civicinfo response contract', function (done) {
 				this.timeout(5000);
 				chai.request('https://www.googleapis.com/')
-					.get('/civicinfo/v2/elections?key=AIzaSyDu01KtAEFDtknOfWElXmybefTujvdcwsI')
+					.get(`/civicinfo/v2/elections?key=${apiKey}`)
 					.set('content-type', 'application/json')
 					.end(function (err, res) {
 						var responseKind = (res.body.kind)
@@ -35,7 +36,7 @@ describe('civic-info-api', function () {
 			it('validate election id', function (done) {
 				this.timeout(5000);
 				chai.request('https://www.googleapis.com/')
-					.get('/civicinfo/v2/elections?key=AIzaSyDu01KtAEFDtknOfWElXmybefTujvdcwsI')
+					.get(`/civicinfo/v2/elections?key=${apiKey}`)
 					.set('content-type', 'application/json')
 					.end(function (err, res) {
 						expect(res).to.have.status(200);
@@ -51,7 +52,7 @@ describe('civic-info-api', function () {
 			it('validate election name', function (done) {
 				this.timeout(5000);
 				chai.request('https://www.googleapis.com/')
-					.get('/civicinfo/v2/elections?key=AIzaSyDu01KtAEFDtknOfWElXmybefTujvdcwsI')
+					.get(`/civicinfo/v2/elections?key=${apiKey}`)
 					.set('content-type', 'application/json')
 					.end(function (err, res) {
 						expect(res).to.have.status(200);
@@ -66,7 +67,7 @@ describe('civic-info-api', function () {
 			it('validate election day', function (done) {
 				this.timeout(5000);
 				chai.request('https://www.googleapis.com/')
-					.get('/civicinfo/v2/elections?key=AIzaSyDu01KtAEFDtknOfWElXmybefTujvdcwsI')
+					.get(`/civicinfo/v2/elections?key=${apiKey}`)
 					.set('content-type', 'application/json')
 					.end(function (err, res) {
 						expect(res).to.have.status(200);
@@ -82,7 +83,7 @@ describe('civic-info-api', function () {
 			it('validate election ocd division id', function (done) {
 				this.timeout(5000);
 				chai.request('https://www.googleapis.com/')
-					.get('/civicinfo/v2/elections?key=AIzaSyDu01KtAEFDtknOfWElXmybefTujvdcwsI')
+					.get(`/civicinfo/v2/elections?key=${apiKey}`)
 					.set('content-type', 'application/json')
 					.end(function (err, res) {
 						expect(res).to.have.status(200);
