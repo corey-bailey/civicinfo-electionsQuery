@@ -14,7 +14,7 @@ npm install
 ## Run Tests
 
 ```bash
-setenv APIKEY "PASS IN YOUR GOOGLE API KEY HERE"
+export APIKEY=PASS-IN-YOUR-GOOGLE-API-KEY-HERE
 npx mocha
 ```
 
@@ -34,16 +34,16 @@ npx mocha
   civic-info-api
     elections
       elections positive tests
-        ✓ validate civicinfo response contract (409ms)
-        ✓ validate election id (381ms)
-        ✓ validate election name (370ms)
-        ✓ validate election day (369ms)
-        ✓ validate election ocd division id (377ms)
-        elections negative tests
-          ✓ elections bad api key (368ms)
+        ✓ validate civicinfo response contract (268ms)
+        ✓ validate election id (175ms)
+        ✓ validate election name (184ms)
+        ✓ validate election day (178ms)
+        ✓ validate election ocd division id (175ms)
+      elections negative tests
+        ✓ elections bad api key (137ms)
 
 
-  6 passing (2s)
+  6 passing (1s)
   
 ```
 
