@@ -1,0 +1,30 @@
+{
+  "name": "node-api-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test/index.js",
+  "scripts": {
+    "test": "mocha --exit || true",
+    "start": "node app",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corey-bailey/civic-info-elections-query-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/corey-bailey/civic-info-elections-query-api.git#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "chai-match": "^1.1.1",
+    "coveralls": "^3.0.6",
+    "mocha": "^6.2.3",
+    "nyc": "^14.1.1"
+  }
+}
