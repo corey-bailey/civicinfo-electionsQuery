@@ -41,9 +41,9 @@ npx mocha
         ✓ validate election ocd division id (175ms)
       elections negative tests
         ✓ elections bad api key (137ms)
+        ✓ elections bad elections version (254ms)
 
-
-  6 passing (1s)
+  7 passing (1s)
   
 ```
 

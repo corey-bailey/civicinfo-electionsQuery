@@ -7,6 +7,7 @@ const apiKey = process.env.APIKEY;
 
 chai.use(chaiHttp);
 chai.use(chaiMatch);
+
 var Banner = `
  _____ _           _   _                ___  ______ _____   _____         _   
 |  ___| |         | | (_)              / _ \\ | ___ \\_   _| |_   _|       | |  
@@ -16,6 +17,7 @@ var Banner = `
 \\____/|_|\\___|\\___|\\__|_|\\___/|_| |_| \\_| |_/\\_|    \\___/    \\_/\\___||___/\\__|                                                                    
 `
 console.log(Banner)
+
 describe('civic-info-api', function() {
 
     describe('elections', function() {
