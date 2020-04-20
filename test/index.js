@@ -3,8 +3,8 @@ const chaiHttp = require('chai-http');
 const chaiMatch = require('chai-match');
 
 const expect = chai.expect;
+const apiKey = process.env.APIKEY;
 
-var apiKey = process.env.APIKEY;
 chai.use(chaiHttp);
 chai.use(chaiMatch);
 var Banner = `
@@ -102,7 +102,7 @@ describe('civic-info-api', function() {
         });
 
         describe('elections negative tests', () => {
-            
+
             it('elections bad api key', function(done) {
                 this.timeout(5000);
                 chai.request('https://www.googleapis.com/')
@@ -116,6 +116,17 @@ describe('civic-info-api', function() {
                         expect(errorReason).to.equal('keyInvalid'); //confirm error reason is because of invalid key
                         expect(errorMessage).to.equal('Bad Request'); //confirm response indicates that request was bad
                         expect(res).to.have.status(400);
+                        done();
+                    });
+            });
+
+            it('elections bad elections api version', function(done) {
+                this.timeout(5000);
+                chai.request('https://www.googleapis.com/')
+                    .get(`/civicinfo/v1/elections?key=${apiKey}`)
+                    .set('content-type', 'application/json')
+                    .end(function(err, res) {
+                        expect(res).to.have.status(404);
                         done();
                     });
             });
