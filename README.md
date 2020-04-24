@@ -1,5 +1,5 @@
 # civic-info-elections-query-api
-is an example Mocha and Chai automated test of theGoogle Civic Information Elections API
+is an example Mocha and Chai automated test of the Google Civic Information Elections API
 
 ## Installation
 Prerequisites
